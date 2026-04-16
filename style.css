@@ -1,0 +1,230 @@
+:root {
+    --bg-color: #f5f5f7;
+    --card-bg: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --accent-blue: #0071e3;
+    --accent-red: #ff3b30;
+    --input-bg: #f5f5f7;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 48px;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+.control-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input {
+    background: var(--input-bg);
+    border: none;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    flex-grow: 1;
+    color: var(--text-primary);
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2px var(--accent-blue);
+}
+
+.btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 980px; /* Pill shape */
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn.primary {
+    background-color: var(--accent-blue);
+    color: white;
+}
+
+.btn.secondary {
+    background-color: #e8e8ed;
+    color: var(--text-primary);
+}
+
+.btn.destructive {
+    background-color: #fff0f0;
+    color: var(--accent-red);
+}
+
+.display-area {
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    margin-top: 10px;
+}
+
+.status-text {
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.log-area {
+    background: var(--input-bg);
+    border-radius: 12px;
+    height: 100px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 14px;
+    font-family: monospace;
+    color: var(--text-secondary);
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.button-row button {
+    flex: 1;
+}
+/* --- CSS Variables for Themes --- */
+:root {
+    /* Light Theme (Default) */
+    --bg-color: #f5f5f7;
+    --card-bg: #ffffff;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --accent-blue: #0071e3;
+    --accent-red: #ff3b30;
+    --input-bg: #f5f5f7;
+    --btn-secondary-bg: #e8e8ed;
+    --btn-secondary-text: #1d1d1f;
+    --shadow-color: rgba(0, 0, 0, 0.04);
+    --shadow-hover: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+    /* Dark Theme Overrides */
+    --bg-color: #000000;
+    --card-bg: #1c1c1e;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --accent-blue: #0a84ff;
+    --accent-red: #ff453a;
+    --input-bg: #2c2c2e;
+    --btn-secondary-bg: #3a3a3c;
+    --btn-secondary-text: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow-hover: rgba(0, 0, 0, 0.8);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Toggle Button Specifics --- */
+.theme-toggle-wrapper {
+    margin-top: 20px;
+}
+
+/* Update your existing .card to use the new variables */
+.card {
+    background: var(--card-bg);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    /* ... keep other card properties ... */
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--shadow-hover);
+}
+
+/* Update your inputs */
+input {
+    background: var(--input-bg);
+    color: var(--text-primary);
+    /* ... keep padding, border-radius, etc ... */
+}
+
+/* Update your buttons */
+.btn.secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+}
+
+/* Update log area */
+.log-area {
+    background: var(--input-bg);
+    color: var(--text-secondary);
+}
