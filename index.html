@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Timers</h1>
+        <p>Lab Interface</p>
+        <!-- Inside <header>, just after the <p> tag -->
+<div class="theme-toggle-wrapper">
+    <button id="themeToggle" class="btn secondary" aria-label="Toggle Dark Mode">
+        🌙 Dark Mode
+    </button>
+</div>
+
+    </header>
+
+    <main>
+        <!-- Countdown Section -->
+        <section class="card">
+            <h2>Countdown</h2>
+            <div class="control-group">
+                <input type="number" id="countdownInput" placeholder="Seconds" value="10">
+                <button id="startCountdown" class="btn primary">Start</button>
+            </div>
+            <div id="countdownDisplay" class="display-area">00</div>
+        </section>
+
+        <!-- Reminder Section -->
+        <section class="card">
+            <h2>Delayed Reminder</h2>
+            <div class="control-group">
+                <input type="text" id="reminderMsg" placeholder="Message">
+                <input type="number" id="reminderDelay" placeholder="Delay (ms)" value="2000">
+            </div>
+            <button id="setReminder" class="btn secondary">Set Reminder</button>
+            <div id="reminderDisplay" class="status-text">Waiting...</div>
+        </section>
+
+        <!-- Recurring Timer Section -->
+        <section class="card">
+            <h2>Recurring Timer</h2>
+            <div class="control-group">
+                <input type="text" id="recurringMsg" placeholder="Log Message" value="Tick...">
+                <input type="number" id="recurringInterval" placeholder="Interval (ms)" value="1000">
+            </div>
+            <div class="button-row">
+                <button id="startRecurring" class="btn primary">Start</button>
+                <button id="stopRecurring" class="btn destructive">Stop</button>
+            </div>
+            <div id="recurringLogs" class="log-area"></div>
+        </section>
+        <!-- Add this new section inside <main>, perhaps after the Recurring Timer -->
+<section class="card">
+    <h2>Stopwatch</h2>
+    <div class="display-area" id="stopwatchDisplay" style="font-feature-settings: 'tnum';">
+        00:00.00
+    </div>
+    <div class="button-row">
+        <button id="startStopwatch" class="btn primary">Start</button>
+        <button id="resetStopwatch" class="btn secondary">Reset</button>
+    </div>
+</section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
