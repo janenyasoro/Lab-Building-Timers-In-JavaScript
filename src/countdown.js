@@ -11,12 +11,21 @@
  * Example Usage:
  * countdownTimer(10, 1000); // Logs remaining time every second for 10 seconds.
  */
-function countdownTimer(startTime, interval) {
-  // Initialize the remaining time
-  // Set up a timer using setInterval
-  // Log the remaining time and decrement it
-  // Stop the timer when time reaches 0
-  // Return the timer ID for validation
+function countdownTimer(seconds, interval = 1000) {
+  // Log the initial second immediately to satisfy the loop start condition in the test
+  console.log(seconds);
+  seconds--;
+
+  const timerId = setInterval(() => {
+    if (seconds > 0) {
+      console.log(seconds);
+      seconds--;
+    } else {
+      clearInterval(timerId);
+    }
+  }, interval);
+
+  return timerId;
 }
 
 module.exports = { countdownTimer };
